@@ -1,7 +1,6 @@
 class RefinerycmsAutoFbposts < Refinery::Generators::EngineInstaller
 
   source_root File.expand_path('../../../', __FILE__)
-  engine_name "auto_fbposts"
 
   def create_view_file
     copy_file 'app/views/admin/blog/posts/_form.html.erb'
