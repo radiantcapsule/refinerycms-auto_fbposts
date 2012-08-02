@@ -1,4 +1,4 @@
-class RefinerycmsAutoFbposts < Refinery::Generators::EngineInstaller
+class RefinerycmsAutoFbposts < Rails::Generators::Base
 
   source_root File.expand_path('../../../', __FILE__)
 
