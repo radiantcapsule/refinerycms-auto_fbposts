@@ -22,10 +22,10 @@ module Refinery
           'A new blog post "{title}" is published.')
       end
 
-      require 'refinery_extension/auto_fbpost'
+      require 'refinerycms/auto_fbposts'
       config.to_prepare do
         BlogPost.class_eval do
-          include ::RefineryExtension::AutoFbpost
+          include ::RefineryExtension::AutoFbposts
         end
       end
     end

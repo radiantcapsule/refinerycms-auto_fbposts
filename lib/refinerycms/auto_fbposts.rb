@@ -1,7 +1,7 @@
 require 'fb_graph'
 
 module RefineryExtension
-  module Fbpost
+  module Fbposts
     def self.post_facebook_message(title, url)
       access_token = RefinerySetting.get(:auto_facebook_access_token)
       page_id = RefinerySetting.get(:auto_facebook_page)
@@ -13,7 +13,7 @@ module RefineryExtension
     end
   end
 
-  module AutoFbpost
+  module AutoFbposts
     def facebook_needed?
       live? && post_facebook && !facebook_posted
     end
@@ -21,7 +21,7 @@ module RefineryExtension
     def post_facebook!
       url = Rails.application.routes.url_helpers.blog_post_url(self)
       begin
-        ::RefineryExtension::Fbpost.post_facebook_message(title, url)
+        ::RefineryExtension::Fbposts.post_facebook_message(title, url)
         self.facebook_posted = true
         self.save
       rescue
